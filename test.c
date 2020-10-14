@@ -22,9 +22,10 @@ test1 ()
 	intset_print(stderr, s) ; fprintf(stderr, "\n") ;
 
 	size_t n_ps ;
-	intset ** ps = intset_powerset(s, &n_ps) ;
+	intset ** ps = intset_subsets(s, 3, &n_ps) ;
 
-	assert(n_ps == 8) ;
+	
+	//assert(n_ps == 8) ;
 
 	for (int i = 0 ; i < n_ps ; i++) {
 		intset_print(stderr, ps[i]) ; fprintf(stderr, "\n") ;
